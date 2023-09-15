@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
         // 控制人物移动速度
         rbComponent.velocity = new Vector2(inputDirection.x * Speed * Time.deltaTime, rbComponent.velocity.y);
         //计算人物水平翻转的方向
-        float scaleX = Mathf.Abs(transform.localScale.x);
-        if (inputDirection.x > 0)
+        float scaleX = -Mathf.Abs(transform.localScale.x);
+        if (inputDirection.x < 0)
         {
             scaleX *= -1;
         }
