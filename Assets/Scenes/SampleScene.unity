@@ -706,6 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbComponent: {fileID: 1069523341}
+  spriteRenderer: {fileID: 1069523338}
   inputDirection: {x: 0, y: 0}
   Speed: 300
 --- !u!1 &1272205215
