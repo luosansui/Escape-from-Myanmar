@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     // 刚体组件
     public Rigidbody2D rbComponent;
+    // Sprite Renderer 组件
+    public SpriteRenderer spriteRenderer;
     // 输入控制器
     private PlayerInputControl inputControl;
     // 移动方向
@@ -40,13 +42,9 @@ public class PlayerController : MonoBehaviour
         // 控制人物移动速度
         rbComponent.velocity = new Vector2(inputDirection.x * Speed * Time.deltaTime, rbComponent.velocity.y);
         //计算人物水平翻转的方向
-        float scaleX = Mathf.Abs(transform.localScale.x);
-        if (inputDirection.x > 0)
+        if (inputDirection.x != 0)
         {
-            scaleX *= -1;
+            spriteRenderer.flipX = inputDirection.x < 0;
         }
-        // 如果人物移动方向为负值，那么人物应该向左移动
-        transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
-
     }
 }
