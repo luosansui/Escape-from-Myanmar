@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         //计算人物水平翻转的方向
         if (inputDirection.x != 0)
         {
-            spriteRenderer.flipX = inputDirection.x < 0;
+            spriteRenderer.flipX = inputDirection.x > 0;
         }
     }
 }
